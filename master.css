@@ -1,0 +1,195 @@
+:root {
+    --line-color: #f22e24/*#0078ba*/;
+    --text-color: #333333;
+    font-size: 16px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    font-family: "parisine-std", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.map-side-filler {
+    width: 100%;
+    height: 4rem;
+}
+.filler-band {
+    width: 100%;
+    height: 100%;
+    background-color: var(--line-color);
+}
+
+.filler-left {
+    padding-right: .05rem;
+}
+.filler-right {
+    padding-left: .05rem;
+}
+
+
+.map-station-wrapper,
+.map-station-wrapper * {
+    transition-duration: .2s;
+}
+
+
+.map-station-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    flex-shrink: 0;
+}
+.map-station-wrapper:hover {
+    width: 10rem;
+}
+
+.map-station-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+}
+
+.map-station-name-ja,
+.map-station-name-en {
+    display: flex;
+    height: 16rem;
+}
+
+.map-station-name-ja {
+    align-items: end;
+    width: 100%;
+    overflow: hidden;
+}
+.map-station-name-ja > span {
+    padding-bottom: 1rem;
+    writing-mode: vertical-rl;
+    color: var(--text-color);
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+.map-station-wrapper:hover .map-station-name-ja {
+    margin-left: 2rem;
+}
+.map-station-wrapper:hover .map-station-name-ja > span {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.map-station-name-en {
+    align-items: start;
+}
+.map-station-name-en > span {
+    writing-mode: vertical-rl;
+    color: var(--text-color);
+    font-size: 1.25rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transform-origin: top left;
+    transform: rotate(-45deg) translate(-1rem, 1rem);
+}
+.map-station-wrapper:hover .map-station-name-en {
+    margin-right: 3rem;
+}
+.map-station-wrapper:hover .map-station-name-en > span {
+    font-size: 2rem;
+    transform: rotate(-45deg) translate(-1.5rem, 1.5rem);
+}
+
+.map-station-number > .filler-band {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .05rem;
+    overflow: hidden;
+}
+
+.numbering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+    line-height: 1.375rem;
+    font-size: 1.375rem;
+}
+.map-station-wrapper:hover .numbering > span {
+    line-height: 2rem;
+    font-size: 2rem;
+}
+.map-station-wrapper:hover .numbering > .char {
+    transform: translate(-1rem, 1rem);
+}
+.map-station-wrapper:hover .numbering > .num {
+    transform: translate(1.25rem, -1rem);
+}
+
+.direction-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -1rem;
+    width: 2rem;
+}
+.map-station-wrapper:hover .direction-arrow {
+    width: 6rem;
+}
+
+.filler-band .direction-arrow {
+    transform: translateX(3rem);
+}
+.map-station-wrapper:hover .filler-band .direction-arrow {
+    transform: translateX(2rem);
+}
+
+.map-station-name-ja .direction-arrow {
+    transform: translate(2rem, -5.5rem);
+}
+.map-station-wrapper:hover .map-station-name-ja .direction-arrow {
+    transform: translate(1rem, -5.5rem);
+}
+
+.direction-arrow .chevron {
+    display: block;
+    clip-path: polygon(0% 0%, 20% 0%, 70% 50%, 20% 100%, 0% 100%, 50% 50%);
+}
+
+.filler-band .chevron {
+    background-color: #ffffff;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 -.6rem;
+}
+
+.map-station-name-ja .chevron {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin: 0 -.5rem;
+    background-color: var(--line-color);
+}
